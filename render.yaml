@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: web-bps-backend
+    env: php
+    buildCommand: ""
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: database/database.sqlite
+      - key: APP_KEY
+        generateValue: true
