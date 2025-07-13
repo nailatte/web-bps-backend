@@ -28,10 +28,10 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 # Install dependencies Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Laravel config dan cache
-RUN php artisan config:clear
-RUN php artisan cache:clear
-RUN php artisan config:cache
+# Jangan jalankan artisan saat build! Tunggu sampai live
+# RUN php artisan config:clear
+# RUN php artisan cache:clear
+# RUN php artisan config:cache
 
 # Laravel akan dijalankan oleh Apache
 CMD ["apache2-foreground"]
