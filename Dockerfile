@@ -30,6 +30,7 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Laravel config dan cache
 RUN php artisan config:clear
+RUN php artisan cache:clear
 RUN php artisan config:cache
 
 # Laravel akan dijalankan oleh Apache
