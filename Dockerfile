@@ -18,6 +18,9 @@ WORKDIR /var/www/html
 # Aktifkan mod_rewrite (Laravel butuh ini)
 RUN a2enmod rewrite
 
+# Ubah Apache agar root-nya ke public/
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+
 # Ubah permission untuk Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
