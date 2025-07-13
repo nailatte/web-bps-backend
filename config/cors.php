@@ -1,6 +1,6 @@
 <?php
 return [
-    'paths' => ['api/*'],
+    'paths' => ['api/*','sanctum/csrf-cookie'],
     'allowed_methods' => ['*'],
     'allowed_origins' => [
         'https://web-bps-frontend-three.vercel.app'

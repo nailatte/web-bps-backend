@@ -29,6 +29,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 RUN composer install --no-dev --optimize-autoloader
 
 # Laravel config dan cache
+RUN php artisan config:clear
 RUN php artisan config:cache
 
 # Laravel akan dijalankan oleh Apache
